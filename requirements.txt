@@ -4,4 +4,4 @@ hikari-lightbulb
 python-dotenv
 aiosqlite
 
-uvloop; os_name != 'nt'
+uvloop

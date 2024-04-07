@@ -98,6 +98,8 @@ async def send_scheduled_messages(app: lb.BotApp):
         await db.commit()
 
 
+@lb.add_checks(lb.guild_only)
+@lb.add_checks(lb.has_guild_permissions(hikari.Permissions.ADMINISTRATOR))
 @bot.command
 @lb.option("message", "the message to schedule", required=True)
 @lb.option("time", "the time to schedule at (yyyy/mm/dd HH:MM:SS)", required=True)
